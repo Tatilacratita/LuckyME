@@ -1,146 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Generator numere Loto</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        height: 100%;
-        background-image: url("https://raw.githubusercontent.com/Tatilacratita/LuckyME/main/lucky.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    h1 {
-        text-align: center;
-        margin-top: 50px;
-        color: white;
-        text-shadow: 2px 2px 4px #000000;
-    }
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    .winning-numbers li {
-        display: inline-block;
-        width: 60px;
-        height: 60px;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 50%;
-        margin: 10px;
-        font-size: 30px;
-        text-align: center;
-        line-height: 60px;
-    }
-    .winner {
-        background-color: green;
-    }
-    button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 10px;
-        cursor: pointer;
-    }
-    form {
-        display: inline-block;
-    }
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: rgba(0,0,0,0.5);
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-footer {
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   color: white;
-   text-align: center;
-   padding: 20px;
-   background: none;
-   text-shadow: 2px 2px 4px #000000;
-}
-    /* stiluri pentru textul incadrat */
-    .fancy-border {
-        background-color: rgba(255, 255, 255, 0.7);
-        color: black;
-        padding: 10px;
-        border: 5px solid #4CAF50;
-        border-radius: 10px;
-        box-shadow: 5px 5px 5px #999;
-        display: inline-block;
-        width: 80%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    /* animație de rotație pentru textul incadrat */
-    @keyframes rotateBorder {
-        from {
-            transform: rotateY(0deg);
+    <title>Generator numere Loto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background-image: url("https://raw.githubusercontent.com/Tatilacratita/LuckyME/main/lucky.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        to {
-            transform: rotateY(180deg);
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
         }
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .winning-numbers li {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin: 10px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .winner {
+            background-color: green;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        form {
+            display: inline-block;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            background: none;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .fancy-border {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            padding: 10px;
+            border: 5px solid #4CAF50;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px #999;
+            display: inline-block;
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    .fancy-border {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        animation: rotateBorder 11s linear infinite;
-        width: 60%; /* modificare latime */
-        height: 10%; /* modificare inaltime */
-        max-width: 600px; /* limitare latime maxima */
-        max-height: 200px; /* limitare inaltime maxima */
-    }
-</style>
+        @keyframes rotateBorder {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .fancy-border {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotateBorder 11s linear infinite;
+            width: 60%;
+            height: 10%;
+            max-width: 600px;
+            max-height: 200px;
+        }
+    </style>
 </head>
 <body>
-	<div class="fancy-border">
-		<p><p>Te simți norocos? Încearcă generatorul meu de numere!Acesta folosește un algoritm original bazat pe ziua ta de naștere.P.S 30% din castig imi revine mie! 😊</p>
-
-	</div>
-	<h1>Generator numere Loto</h1>
-	<div class="container">
-		<ul class="winning-numbers" id="winning-numbers">
-			<li>?</li>
-			<li>?</li>
-			<li>?</li>
-			<li>?</li>
-			<li>?</li>
-			<li>?</li>
-    </ul>
-		<form>
-			<label for="birthday">Ziua de naștere:</label>
-			<input type="date" name="birthday" id="birthday" required><br>
-			<button type="submit" id="generate-button">Generează numere</button>
-		</form>
-
-	</div>
-	<script src="./generator.js"></script>
-	<footer>
-	    <div class="archive">
-		<button type="button" id="generate-archive-button">Generează arhiva 6/49</button>
-		</div>
-			<script src="./arhiva.js"></script>
-		<p> &copy;<strong>Powered by TatiLaCratita with AI support 2023</strong></p>
-	</footer>
-
+    <div class="fancy-border">
+        <p>Te simți norocos? Încearcă generatorul meu de numere! Acesta folosește un algoritm original bazat pe ziua ta de naștere. P.S 30% din câștig îmi revine mie! 😊</p>
+    </div>
+    <h1>Generator numere Loto</h1>
+    <div class="container">
+        <ul class="winning-numbers" id="winning-numbers">
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+        </ul>
+        <form>
+            <label for="birthday">Ziua de naștere:</label>
+            <input type="date" name="birthday" id="birthday" required><br>
+            <button type="submit" id="generate-button">Generează numere</button>
+        </form>
+    </div>
+    <script src="./Birthdaybun.js"></script> <!-- Asigură-te că numele fișierului este corect -->
+    <footer>
+        <div class="archive">
+            <button type="button" id="generate-archive-button">Generează arhiva 6/49</button>
+        </div>
+        <script src="./arhiva.js"></script>
+        <p>&copy;<strong>Powered by TatiLaCratita with AI support 2023</strong></p>
+    </footer>
 </body>
 </html>
