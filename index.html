@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<html lang="ro">
 <head>
     <title>Generator numere Loto</title>
     <meta charset="UTF-8">
@@ -8,20 +8,27 @@
         body {
             font-family: Arial, sans-serif;
             height: 100%;
+            margin: 0; /* Eliminăm marginile pentru a evita probleme de aspect */
             background-image: url("https://raw.githubusercontent.com/Tatilacratita/LuckyME/main/lucky.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex; /* Flexbox pentru alinierea centrală */
+            flex-direction: column; /* Direcția verticală */
+            justify-content: center; /* Aliniere pe axa verticală */
+            align-items: center; /* Aliniere pe axa orizontală */
+            text-align: center; /* Centrăm textul */
         }
         h1 {
-            text-align: center;
-            margin-top: 50px;
+            margin-top: 20px; /* Ajustăm marginea pentru un aspect mai plăcut */
             color: white;
             text-shadow: 2px 2px 4px #000000;
         }
         .container {
             max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
+            margin: 20px; /* Spațiu între container și marginea paginii */
+            padding: 10px; /* Padding pentru a oferi spațiu în interior */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundal semi-transparent */
+            border-radius: 10px; /* Colțuri rotunjite */
         }
         .winning-numbers li {
             display: inline-block;
@@ -35,42 +42,40 @@
             text-align: center;
             line-height: 60px;
         }
-        .winner {
-            background-color: green;
-        }
         button {
             background-color: #4CAF50;
             border: none;
             color: white;
             padding: 10px 20px;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
             font-size: 16px;
-            margin: 10px;
+            margin: 10px 0; /* Margine verticală pentru butoane */
             cursor: pointer;
+            width: 100%; /* Butoanele vor ocupa întreaga lățime a containerului */
+            max-width: 300px; /* Lățime maximă pentru butoane */
+            border-radius: 5px; /* Colțuri rotunjite pentru butoane */
         }
         form {
-            display: inline-block;
+            display: flex;
+            flex-direction: column; /* Afișăm elementele formularului pe verticală */
+            align-items: center; /* Centrăm elementele formularului */
+            margin-bottom: 20px; /* Spațiu sub formular */
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0; /* Spațiu între input și buton */
+            width: 100%; /* Lățime completă pentru input */
+            max-width: 300px; /* Lățime maximă pentru input */
+            border-radius: 5px; /* Colțuri rotunjite pentru input */
+            border: 1px solid #ccc; /* Bordură gri pentru input */
         }
         footer {
-            position: fixed;
-            bottom: 0;
             width: 100%;
             background-color: rgba(0,0,0,0.5);
             color: white;
             text-align: center;
             padding: 20px;
-        }
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            background: none;
-            text-shadow: 2px 2px 4px #000000;
+            position: relative; /* Asigurăm că footer-ul rămâne în partea de jos */
         }
         .fancy-border {
             background-color: rgba(255, 255, 255, 0.7);
@@ -79,31 +84,9 @@
             border: 5px solid #4CAF50;
             border-radius: 10px;
             box-shadow: 5px 5px 5px #999;
-            display: inline-block;
             width: 80%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        @keyframes rotateBorder {
-            from {
-                transform: rotateY(0deg);
-            }
-            to {
-                transform: rotateY(180deg);
-            }
-        }
-        .fancy-border {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotateBorder 11s linear infinite;
-            width: 60%;
-            height: 10%;
-            max-width: 600px;
-            max-height: 200px;
+            max-width: 600px; /* Lățime maximă pentru mesajul fancy */
+            margin: 20px auto; /* Centrare pe orizontală */
         }
     </style>
 </head>
@@ -123,7 +106,7 @@
         </ul>
         <form>
             <label for="birthday">Ziua de naștere (zi/lună/an):</label>
-            <input type="text" name="birthday" id="birthday" placeholder="31/12/1990" required pattern="\d{1,2}/\d{1,2}/\d{4}"><br>
+            <input type="text" name="birthday" id="birthday" placeholder="31/12/1990" required pattern="\d{1,2}/\d{1,2}/\d{4}">
             <button type="submit" id="generate-button">Generează numere</button>
         </form>
     </div>
@@ -135,7 +118,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
         <script src="./arhiva.js"></script>
         <script src="./arhivabun.js"></script>
-        <p> &copy;<strong>Powered by TatiLaCratita with AI support 2023</strong></p>
+        <p> &copy; <strong>Powered by TatiLaCratita with AI support 2023</strong></p>
     </footer>
 </body>
 </html>
