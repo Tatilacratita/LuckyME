@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <title>Generator numere Loto</title>
@@ -27,7 +27,6 @@
             max-width: 1000px;
             margin: 20px; /* Spațiu între container și marginea paginii */
             padding: 10px; /* Padding pentru a oferi spațiu în interior */
-            background-color: rgba(255, 255, 255, 0.8); /* Fundal semi-transparent */
             border-radius: 10px; /* Colțuri rotunjite */
         }
         .winning-numbers li {
@@ -71,14 +70,13 @@
         }
         footer {
             width: 100%;
-            background-color: rgba(0,0,0,0.5);
             color: white;
             text-align: center;
             padding: 20px;
             position: relative; /* Asigurăm că footer-ul rămâne în partea de jos */
         }
         .fancy-border {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0); /* Fundal transparent pentru mesajul fancy */
             color: black;
             padding: 10px;
             border: 5px solid #4CAF50;
@@ -87,6 +85,15 @@
             width: 80%;
             max-width: 600px; /* Lățime maximă pentru mesajul fancy */
             margin: 20px auto; /* Centrare pe orizontală */
+            animation: rotateBorder 11s linear infinite; /* Animatie pentru mesaj */
+        }
+        @keyframes rotateBorder {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(180deg);
+            }
         }
     </style>
 </head>
