@@ -30,6 +30,10 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        .winning-numbers {
+            list-style-type: none; /* Elimină bullet-urile din listă */
+            padding: 0; /* Elimină padding-ul implicit */
+        }
         .winning-numbers li {
             display: inline-block;
             width: 60px;
@@ -56,10 +60,14 @@
             font-size: 16px;
             margin: 10px;
             cursor: pointer;
+            width: 80%; /* Asigură că butoanele au o lățime consistentă pe mobil */
+            max-width: 300px; /* Limitare a lățimii butoanelor */
         }
         form {
             display: inline-block;
             margin-top: 20px;
+            width: 100%; /* Asigură că formularul ocupă întreaga lățime */
+            max-width: 350px; /* Limitare a lățimii formularului */
         }
         footer {
             text-align: center;
@@ -97,6 +105,8 @@
             font-weight: bold;
             color: white;
             font-size: 20px;
+            display: block; /* Asigură că eticheta ocupă întreaga lățime */
+            margin-bottom: 10px; /* Spațiu între etichetă și câmpul de input */
         }
         input[type="text"] {
             padding: 10px;
@@ -120,7 +130,7 @@
             <li>?</li>
             <li>?</li>
         </ul>
-        <form>
+        <form id="birthday-form">
             <label class="birthday-label" for="birthday">Ziua de naștere (zi/lună/an):</label>
             <input type="text" name="birthday" id="birthday" placeholder="31/12/1990" required pattern="\d{1,2}/\d{1,2}/\d{4}"><br>
             <button type="submit" id="generate-button">Generează numere</button>
