@@ -15,14 +15,26 @@ function generateNumbers() {
         var data = new Uint8Array(e.target.result);
         var workbook = XLSX.read(data, {type: 'array'});
         var sheet = workbook.Sheets[workbook.SheetNames[0]];
-        var history = XLSX.utils.sheet_to_json(sheet);
-  
+        
+        // Extragem datele din cele 6 coloane
+        var history = XLSX.utils.sheet_to_json(sheet, {header: 1}); // Obține datele ca un array de arrays
+
+        // Filtrăm datele pentru a obține un istoric formatat
+        var formattedHistory = history.map(row => ({
+            Nr_1: row[0], // Prima coloană
+            Nr_2: row[1], // A doua coloană
+            Nr_3: row[2], // A treia coloană
+            Nr_4: row[3], // A patra coloană
+            Nr_5: row[4], // A cincea coloană
+            Nr_6: row[5]  // A șasea coloană
+        })).slice(1); // Ignorăm prima linie dacă aceasta conține antetele
+
         // Aplicam algoritmul Gianelli sau Boosting in functie de valoarea din dropdown
         var numbers;
         if (algorithm === "gianelli") {
-            numbers = gianelliAlgorithm(draws, history, birthday); // Pasăm data de naștere
+            numbers = gianelliAlgorithm(draws, formattedHistory, birthday); // Pasăm datele formatate
         } else if (algorithm === "boosting") {
-            numbers = boostingAlgorithm(draws, history, birthday); // Pasăm data de naștere
+            numbers = boostingAlgorithm(draws, formattedHistory, birthday); // Pasăm datele formatate
         } else {
             numbers = randomAlgorithm(draws, birthday); // Pasăm data de naștere
         }
@@ -31,7 +43,7 @@ function generateNumbers() {
         var requestData = {
             draws: draws,
             algorithm: algorithm,
-            history: history,
+            history: formattedHistory, // Trimitim istoricul formatat
             numbers: numbers,
             birthday: birthday // Adăugăm data de naștere în obiectul trimis
         };
