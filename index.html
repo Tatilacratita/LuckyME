@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
             color: white;
+            overflow: hidden; /* Evită apariția barelor de derulare */
         }
         h1 {
             text-align: center;
@@ -61,14 +62,14 @@
             margin-top: 20px;
         }
         footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
             text-align: center;
             padding: 20px;
-            margin-top: auto; /* Permite footer-ului să se deplaseze la fundul paginii */
             color: white;
             text-shadow: 2px 2px 4px #000000;
+            position: absolute; /* Asigură că footer-ul rămâne în partea de jos */
+            bottom: 0;
+            width: 100%;
+            background: transparent; /* Elimină fundalul gri */
         }
         .fancy-border {
             background-color: rgba(255, 255, 255, 0.7);
@@ -82,6 +83,15 @@
             max-width: 600px;
             text-align: center;
             margin-bottom: 20px;
+            animation: rotateBorder 11s linear infinite; /* Adăugată animația */
+        }
+        @keyframes rotateBorder {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(180deg);
+            }
         }
         .birthday-label {
             font-weight: bold;
