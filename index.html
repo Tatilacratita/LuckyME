@@ -127,11 +127,10 @@ footer {
 			<li>?</li>
     </ul>
 		<form>
-			<label for="birthday">Ziua de naștere:</label>
-			<input type="date" name="birthday" id="birthday" required><br>
-			<button type="submit" id="generate-button">Generează numere</button>
-		</form>
-
+    <label for="birthday">Ziua de naștere (zi/lună/an):</label>
+    <input type="text" name="birthday" id="birthday" placeholder="31/12/1990" required pattern="\d{1,2}/\d{1,2}/\d{4}"><br>
+    <button type="submit" id="generate-button">Generează numere</button>
+                </form>
 	</div>
 	<script src="./generator.js"></script>
 	<footer>
