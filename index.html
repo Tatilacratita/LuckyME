@@ -17,7 +17,6 @@
             justify-content: center;
             align-items: center;
             color: white;
-            overflow: hidden; /* Evită apariția barelor de derulare */
         }
         h1 {
             text-align: center;
@@ -29,10 +28,6 @@
             max-width: 90%;
             text-align: center;
             margin-bottom: 20px;
-        }
-        .winning-numbers {
-            list-style-type: none; /* Elimină bullet-urile din listă */
-            padding: 0; /* Elimină padding-ul implicit */
         }
         .winning-numbers li {
             display: inline-block;
@@ -60,24 +55,20 @@
             font-size: 16px;
             margin: 10px;
             cursor: pointer;
-            width: 80%; /* Asigură că butoanele au o lățime consistentă pe mobil */
-            max-width: 300px; /* Limitare a lățimii butoanelor */
         }
         form {
             display: inline-block;
             margin-top: 20px;
-            width: 100%; /* Asigură că formularul ocupă întreaga lățime */
-            max-width: 350px; /* Limitare a lățimii formularului */
         }
         footer {
-            text-align: center;
-            padding: 20px;
-            color: white;
-            text-shadow: 2px 2px 4px #000000;
-            position: absolute; /* Asigură că footer-ul rămâne în partea de jos */
+            position: relative;
             bottom: 0;
             width: 100%;
-            background: transparent; /* Elimină fundalul gri */
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Permite footer-ului să se deplaseze la fundul paginii */
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
         }
         .fancy-border {
             background-color: rgba(255, 255, 255, 0.7);
@@ -91,22 +82,11 @@
             max-width: 600px;
             text-align: center;
             margin-bottom: 20px;
-            animation: rotateBorder 11s linear infinite; /* Adăugată animația */
-        }
-        @keyframes rotateBorder {
-            from {
-                transform: rotateY(0deg);
-            }
-            to {
-                transform: rotateY(180deg);
-            }
         }
         .birthday-label {
             font-weight: bold;
             color: white;
             font-size: 20px;
-            display: block; /* Asigură că eticheta ocupă întreaga lățime */
-            margin-bottom: 10px; /* Spațiu între etichetă și câmpul de input */
         }
         input[type="text"] {
             padding: 10px;
@@ -130,7 +110,7 @@
             <li>?</li>
             <li>?</li>
         </ul>
-        <form id="birthday-form">
+        <form>
             <label class="birthday-label" for="birthday">Ziua de naștere (zi/lună/an):</label>
             <input type="text" name="birthday" id="birthday" placeholder="31/12/1990" required pattern="\d{1,2}/\d{1,2}/\d{4}"><br>
             <button type="submit" id="generate-button">Generează numere</button>
