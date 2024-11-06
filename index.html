@@ -4,6 +4,12 @@
     <title>Generator numere Loto</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        // Redirecționează la HTTPS dacă pagina este accesată prin HTTP
+        if (window.location.protocol === "http:") {
+            window.location.href = window.location.href.replace("http://", "https://");
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -134,11 +140,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
         <script src="./arhiva.js"></script>
         <script src="./arhivabun.js"></script>
-          <script>
-    if (window.location.protocol === "http:") {
-        window.location.href = window.location.href.replace("http://", "https://");
-    }
-    </script>
         <p> &copy; <strong>Powered by TatiLaCratita with AI support 2023</strong></p>
     </footer>
 </body>
