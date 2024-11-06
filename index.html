@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        // Verificăm dacă URL-ul conține "www" și îl eliminăm
+        // Verifică dacă URL-ul conține "www" și redirecționează la varianta fără "www"
         if (window.location.hostname.startsWith("www")) {
-            window.location.href = "https://" + window.location.hostname.replace(/^www\./, "") + window.location.pathname + window.location.search;
+            const newUrl = "https://" + window.location.hostname.replace(/^www\./, "") + window.location.pathname + window.location.search;
+            window.location.replace(newUrl);
         }
     </script>
     <style>
