@@ -4,19 +4,10 @@
     <title>Generator numere Loto</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // Redirecționează la HTTPS și adaugă "www" dacă este necesar
-        if (window.location.protocol === "http:") {
-            // Dacă URL-ul nu conține "www", redirecționează la varianta cu "https://www"
-            if (!window.location.hostname.startsWith("www")) {
-                window.location.href = "https://www." + window.location.hostname + window.location.pathname + window.location.search;
-            } else {
-                // Redirecționează doar la HTTPS
-                window.location.href = window.location.href.replace("http://", "https://");
-            }
-        } else if (!window.location.hostname.startsWith("www")) {
-            // Dacă protocolul este deja HTTPS dar nu conține "www", adaugă "www"
-            window.location.href = "https://www." + window.location.hostname + window.location.pathname + window.location.search;
+   <script>
+        // Verificăm dacă este http sau dacă "www" lipsește și redirecționăm la https://www
+        if (window.location.protocol === "http:" || !window.location.hostname.startsWith("www")) {
+            window.location.href = "https://www." + window.location.hostname.replace(/^www\./, "") + window.location.pathname + window.location.search;
         }
     </script>
     <style>
