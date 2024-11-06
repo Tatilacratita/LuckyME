@@ -4,12 +4,13 @@
     <title>Generator numere Loto</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script>
-        // Verificăm dacă este http sau dacă "www" lipsește și redirecționăm la https://www
-        if (window.location.protocol === "http:" || !window.location.hostname.startsWith("www")) {
-            window.location.href = "https://www." + window.location.hostname.replace(/^www\./, "") + window.location.pathname + window.location.search;
+    <script>
+        // Verificăm dacă URL-ul conține "www" și îl eliminăm
+        if (window.location.hostname.startsWith("www")) {
+            window.location.href = "https://" + window.location.hostname.replace(/^www\./, "") + window.location.pathname + window.location.search;
         }
     </script>
+    <style>
     <style>
         body {
             font-family: Arial, sans-serif;
